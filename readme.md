@@ -43,7 +43,7 @@ Nossas rotas são:
 |----------|------------|-------------------|
 | POST     | api/login  | App\Http\Controllers\UsuarioController@login |
 | POST     | api/tarefas| App\Http\Controllers\TarefaController@cadastrar |
-| GET|HEAD | api/tarefas|App\Http\Controllers\TarefaController@todas |
+| GET | api/tarefas|App\Http\Controllers\TarefaController@todas |
 | DELETE   | api/tarefas/{id} | App\Http\Controllers\TarefaController@excluir |
 
 A autenticação está sendo realizada através do Headers no campo: Authorization passando um token baseado em JWT.
