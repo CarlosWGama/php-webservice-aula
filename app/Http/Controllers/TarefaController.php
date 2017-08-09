@@ -16,7 +16,7 @@ class TarefaController extends Controller {
     public function todas(Request $request) {
         $usuarioID = $this->getID($request);
         
-        $return['tarefas'] = Tarefa::where('usuario_id', $usuarioID)->get();
+        $return = Tarefa::where('usuario_id', $usuarioID)->get();
         
         return response()->json($return, 200);
     }
