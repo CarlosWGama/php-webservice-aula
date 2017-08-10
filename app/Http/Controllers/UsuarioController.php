@@ -28,6 +28,8 @@ class UsuarioController extends Controller
             //'exp'   => (time()+(60*60)), //Exclui o token após 1h da sua criação 
             'data'  => ['id' => $usuario->id]], config('jwt.key'));
 
-        return response()->json($token, 200);
+        $return['token'] = $token;
+
+        return response()->json($return, 200);
     }
 }
