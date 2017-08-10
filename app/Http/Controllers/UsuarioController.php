@@ -25,14 +25,9 @@ class UsuarioController extends Controller
         //Gera o token JWT
         $token = JWT::encode([
             'iat'   => time(), //Hora que o token foi criado
-            'exp'   => (time()+(60*60)), //Exclui o token após 1h da sua criação 
+            //'exp'   => (time()+(60*60)), //Exclui o token após 1h da sua criação 
             'data'  => ['id' => $usuario->id]], config('jwt.key'));
 
-        $return = [
-            'token' => $token,
-            'email' => $usuario->email
-        ];
-
-        return response()->json($return, 200);
+        return response()->json($token, 200);
     }
 }
